@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <AnchorPane fx:id="inner" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="200.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView>
+                     <image>
+                        <Image url="@../imgs/osx_green.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView>
+                     <image>
+                        <Image url="@../imgs/osx_orange.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView onMouseClicked="#close">
+                     <image>
+                        <Image url="@../imgs/osx_red.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </HBox>
+            <MenuBar prefHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="Open file..." />
+                        <MenuItem mnemonicParsing="false" text="Open folder" />
+                        <MenuItem mnemonicParsing="false" text="Preferences" />
+                    <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Playback">
+                  <items>
+                        <CheckMenuItem mnemonicParsing="false" text="Shuffle" />
+                        <CheckMenuItem mnemonicParsing="false" text="Repeat" />
+                        <CheckMenuItem mnemonicParsing="false" text="Repeat All" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <VBox layoutX="174.0" layoutY="217.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Label onMouseClicked="#prev">
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../imgs/prev.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label onMouseClicked="#play">
+                           <graphic>
+                              <ImageView fx:id="playImage">
+                                 <image>
+                                    <Image url="@../imgs/play.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label>
+                           <graphic>
+                              <ImageView onMouseClicked="#stop">
+                                 <image>
+                                    <Image url="@../imgs/stop.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label>
+                           <graphic>
+                              <ImageView onMouseClicked="#next">
+                                 <image>
+                                    <Image url="@../imgs/next.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <VBox fx:id="playingTitle" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Not playing" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="table" prefHeight="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="id" prefWidth="100.0" text="#ID" />
+                      <TableColumn fx:id="title" prefWidth="100.0" text="Title" />
+                        <TableColumn fx:id="artist" prefWidth="100.0" text="Artist" />
+                        <TableColumn fx:id="album" prefWidth="100.0" text="Album" />
+                        <TableColumn fx:id="length" prefWidth="100.0" text="Length" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
