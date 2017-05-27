@@ -41,8 +41,10 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Open file..." />
+                        <MenuItem fx:id="openFile" mnemonicParsing="false" text="Open file..." />
+                        <MenuItem fx:id="openFile1" mnemonicParsing="false" text="Add file to playlist" />
                         <MenuItem mnemonicParsing="false" text="Open folder" />
+                        <MenuItem fx:id="openFile11" mnemonicParsing="false" text="Add folder to playlist" />
                         <MenuItem mnemonicParsing="false" text="Preferences" />
                     <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
                   </items>
@@ -65,7 +67,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Label onMouseClicked="#prev">
+                        <Label onMousePressed="#prev">
                            <graphic>
                               <ImageView>
                                  <image>
@@ -77,7 +79,7 @@
                               <Insets bottom="5.0" top="5.0" />
                            </padding>
                         </Label>
-                        <Label onMouseClicked="#play">
+                        <Label onMousePressed="#play">
                            <graphic>
                               <ImageView fx:id="playImage">
                                  <image>
@@ -89,9 +91,9 @@
                               <Insets bottom="5.0" top="5.0" />
                            </padding>
                         </Label>
-                        <Label>
+                        <Label onMousePressed="#stop">
                            <graphic>
-                              <ImageView onMouseClicked="#stop">
+                              <ImageView>
                                  <image>
                                     <Image url="@../imgs/stop.png" />
                                  </image>
@@ -101,9 +103,9 @@
                               <Insets bottom="5.0" top="5.0" />
                            </padding>
                         </Label>
-                        <Label>
+                        <Label onMousePressed="#next">
                            <graphic>
-                              <ImageView onMouseClicked="#next">
+                              <ImageView>
                                  <image>
                                     <Image url="@../imgs/next.png" />
                                  </image>

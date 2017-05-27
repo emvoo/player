@@ -5,10 +5,9 @@ package models;
  */
 public class Song {
     private int id;
-    private String title, artist, album;
-    private double length;
+    private String title, artist, album, length;
 
-    public Song(int id, String title, String artist, String album, double length) {
+    public Song(int id, String title, String artist, String album, String length) {
         this.id = id;
         this.title = title;
         this.artist = artist;
@@ -20,11 +19,11 @@ public class Song {
     public String getTitle() { return title; }
     public String getArtist() { return artist; }
     public String getAlbum() { return album; }
-    public double getLength() { return length; }
+    public String getLength() { return length; }
 
     public void setId(int id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
     public void setArtist(String artist) { this.artist = artist; }
     public void setAlbum(String album) { this.album = album; }
-    public void setLength(double length) { this.length = length; }
+    public void setLength(String length) { this.length = length; }
 }
